@@ -41,7 +41,7 @@ export default function AboutMe() {
             Get To Know Me
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold mt-3 mb-4">
-            About <span className="gradient-text">Me</span>
+            About Me
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
         </motion.div>

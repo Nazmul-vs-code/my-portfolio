@@ -33,7 +33,7 @@ export default function Contact() {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch("https://formsubmit.co/nazmulfatin08@gmail.com", {
+      const response = await fetch("https://formsubmit.co/26463e69736c50810d984fc58a60488c", {
         method: "POST",
         body: formData,
         headers: {
@@ -70,7 +70,7 @@ export default function Contact() {
             Get In Touch
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold mt-3 mb-4">
-            Contact <span className="gradient-text">Me</span>
+            Contact Me
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
         </motion.div>
