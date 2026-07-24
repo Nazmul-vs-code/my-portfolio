@@ -1,0 +1,10 @@
+{
+  "title": "Let's work together! 🤝",
+  "description": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out!",
+  "info": [
+    { "label": "Email", "value": "nazmulfatin08@gmail.com", "href": "mailto:nazmulfatin08@gmail.com", "icon": "FiMail", "color": "from-blue-500 to-cyan-500" },
+    { "label": "Email", "value": "khalekbiton1977@gmail.com", "href": "mailto:khalekbiton1977@gmail.com", "icon": "FiMail", "color": "from-blue-400 to-blue-600" },
+    { "label": "WhatsApp", "value": "+880 1311-834044", "href": "https://wa.me/8801311834044", "icon": "FiMessageCircle", "color": "from-green-400 to-green-600" },
+    { "label": "Location", "value": "Dhaka, Bangladesh", "href": "#", "icon": "FiMapPin", "color": "from-purple-500 to-pink-500" }
+  ]
+}

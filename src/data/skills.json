@@ -1,0 +1,80 @@
+{
+  "categories": [
+    {
+      "title": "Frontend",
+      "emoji": "🎨",
+      "skills": [
+        { "name": "Next.js", "level": 82, "icon": "https://skillicons.dev/icons?i=nextjs" },
+        { "name": "React", "level": 88, "icon": "https://skillicons.dev/icons?i=react" },
+        { "name": "HTML5", "level": 95, "icon": "https://skillicons.dev/icons?i=html" },
+        { "name": "CSS3", "level": 90, "icon": "https://skillicons.dev/icons?i=css" },
+        { "name": "JavaScript", "level": 88, "icon": "https://skillicons.dev/icons?i=js" },
+        { "name": "Tailwind CSS", "level": 88, "icon": "https://skillicons.dev/icons?i=tailwind" }
+      ]
+    },
+    {
+  "title": "Programming Languages",
+  "emoji": "💻",
+  "languages": [
+    {
+      "name": "JavaScript",
+      "level": 88,
+      "icon": "https://skillicons.dev/icons?i=js"
+    }
+  ],
+  "previouslyPracticed": [
+    {
+      "name": "Python",
+      "icon": "https://skillicons.dev/icons?i=python"
+    },
+    {
+      "name": "C",
+      "icon": "https://skillicons.dev/icons?i=c"
+    },
+    {
+      "name": "C++",
+      "icon": "https://skillicons.dev/icons?i=cpp"
+    }
+  ]
+},
+    {
+      "title": "Backend",
+      "emoji": "⚙️",
+      "skills": [
+        { "name": "Node.js", "level": 80, "icon": "https://skillicons.dev/icons?i=nodejs" },
+        { "name": "Express.js", "level": 78, "icon": "https://skillicons.dev/icons?i=express" },
+        { "name": "MongoDB", "level": 76, "icon": "https://skillicons.dev/icons?i=mongodb" }
+      ]
+    },
+    {
+      "title": "Tools",
+      "emoji": "🛠️",
+      "skills": [
+        { "name": "Git", "level": 82, "icon": "https://skillicons.dev/icons?i=git" },
+        { "name": "GitHub", "level": 80, "icon": "https://skillicons.dev/icons?i=github" },
+        { "name": "VS Code", "level": 90, "icon": "https://skillicons.dev/icons?i=vscode" },
+        { "name": "Figma", "level": 70, "icon": "https://skillicons.dev/icons?i=figma" },
+        { "name": "Postman", "level": 78, "icon": "https://skillicons.dev/icons?i=postman" },
+        { "name": "NPM", "level": 80, "icon": "https://skillicons.dev/icons?i=npm" }
+      ]
+    },
+    {
+      "title": "Security",
+      "emoji": "🔐",
+      "skills": [
+        { "name": "Linux", "level": 75, "icon": "https://skillicons.dev/icons?i=linux" },
+        { "name": "Bash", "level": 70, "icon": "https://skillicons.dev/icons?i=bash" }
+      ],
+      "extras": [
+        "Bug Bounty",
+        "XSS",
+        "IDOR",
+        "Broken Access Control",
+        "Account Takeover",
+        "CORS",
+        "Open Redirect",
+        "Information Disclosure"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "degree": "Bachelor of Science in Computer Science",
+    "institution": "University of Example",
+    "year": "2020 - 2024",
+    "description": "Focused on software engineering, data structures, algorithms, and web technologies. Graduated with honors.",
+    "highlights": ["Dean's List", "Web Dev Club Lead", "Hackathon Winner"]
+  },
+  {
+    "degree": "Higher Secondary Certificate (HSC)",
+    "institution": "Example College",
+    "year": "2018 - 2020",
+    "description": "Science group with Mathematics, Physics, Chemistry, and ICT.",
+    "highlights": ["GPA: 5.00", "Science Fair 1st Place"]
+  }
+]

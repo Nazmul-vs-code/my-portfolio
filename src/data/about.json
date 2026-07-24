@@ -1,0 +1,18 @@
+{
+  "intro": "I'm a passionate Full-stack Developer from Bangladesh who enjoys building modern, responsive, and user-friendly web applications.",
+  "journey": "Alongside web development, I actively learn Cyber Security and Bug Bounty Hunting. I love solving real-world problems, exploring new technologies, and continuously improving my development skills.",
+  "currentActivities": [
+    { "emoji": "🌱", "text": "Exploring Next.js" },
+    { "emoji": "💻", "text": "Working on a Tourism Website" },
+    { "emoji": "🔐", "text": "Learning Web Security & Bug Bounty Hunting" },
+    { "emoji": "📚", "text": "Practicing JavaScript Problem Solving" },
+    { "emoji": "🎯", "text": "Improving my React & Next.js skills" }
+  ],
+  "hobbies": ["🌐 Web Development", "🔐 Cyber Security", "🎮 Gaming", "☕ Coffee", "📚 Reading", "🏃 Running"],
+  "quote": "Learning never stops. Every project is another opportunity to grow.",
+  "stats": [
+    { "num": "10+", "label": "Projects" },
+    { "num": "8+", "label": "Month Exp" },
+    { "num": "50+", "label": "Commits" }
+  ]
+}

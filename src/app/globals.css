@@ -1,26 +1,70 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+::selection {
+  background: oklch(var(--p));
+  color: oklch(var(--pc));
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: oklch(var(--b2));
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(var(--p));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  opacity: 0.8;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, oklch(var(--p)), oklch(var(--s)));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-card {
+  background: oklch(var(--b2) / 0.5);
+  backdrop-filter: blur(12px);
+  border: 1px solid oklch(var(--bc) / 0.1);
+}
+
+.glass-card:hover {
+  border-color: oklch(var(--p) / 0.3);
+  box-shadow: 0 8px 32px oklch(var(--p) / 0.08);
+}
+
+.mesh-gradient {
+  background:
+    radial-gradient(at 20% 20%, oklch(var(--p) / 0.1) 0px, transparent 50%),
+    radial-gradient(at 80% 80%, oklch(var(--s) / 0.08) 0px, transparent 50%);
+}
+
+.skill-bar {
+  background: linear-gradient(90deg, oklch(var(--p)), oklch(var(--s)));
+}
+
+.btn-glow {
+  transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 25px oklch(var(--p) / 0.4);
+  transform: translateY(-2px);
 }

@@ -1,0 +1,59 @@
+[
+  {
+    "name": "ICTBoost",
+    "tagline": "AI-Powered Learning Platform",
+    "image": "🎓",
+    "description": "A full-stack Agentic AI application that helps students master HTML and C Programming through expert-created lessons, interactive quizzes, and a personalized AI tutor powered by Gemini AI.",
+    "tech": ["Next.js 16", "TypeScript", "Tailwind CSS", "DaisyUI", "Recharts", "Better Auth", "Node.js", "Express.js", "MongoDB", "Gemini AI"],
+    "live": "https://ictboost-client.vercel.app",
+    "github": "https://github.com/Nazmul-vs-code/ICTBoost-client",
+    "challenges": "Integrating Gemini AI for 4 different modes (Explain, Debug, Quiz, Practice), implementing chat history persistence, and building theme-aware analytics charts.",
+    "improvements": "Add more programming languages, implement spaced repetition for lessons, add collaborative study rooms, and mobile app version.",
+    "features": [
+      "25+ structured lessons across HTML and C Programming",
+      "YouTube video embeds for each lesson",
+      "4 AI modes: Explain Concept, Debug Code, Generate Quiz, Practice Problems",
+      "Teacher dashboard with analytics charts",
+      "Dark/Light theme toggle with system persistence",
+      "Like system with infinite scroll"
+    ]
+  },
+  {
+    "name": "Meal Pilot",
+    "tagline": "Modern Food Ordering Platform",
+    "image": "🍽️",
+    "description": "A modern food ordering platform connecting customers, restaurant owners, and administrators. Restaurants can register, publish menus, and customers can discover and order delicious meals.",
+    "tech": ["Next.js 16", "TypeScript", "Tailwind CSS", "DaisyUI", "HeroUI", "Swiper.js", "Recharts", "Framer Motion", "Node.js", "Express.js", "MongoDB", "Better Auth"],
+    "live": "https://meel-pilot-client.vercel.app",
+    "github": "https://github.com/Nazmul-vs-code/MeelPilot-client",
+    "challenges": "Building the admin approval workflow for restaurants, implementing role-based dashboards, and creating interactive food analytics with Recharts.",
+    "improvements": "Add online payment integration, live order tracking, wishlist & favorites, real-time notifications, and PWA support.",
+    "features": [
+      "Restaurant management with admin approval system",
+      "Food browsing with search & filter",
+      "Role-based dashboards (Admin, Seller, Customer)",
+      "Interactive analytics with Recharts",
+      "Animated hero section with Swiper slider",
+      "Fully responsive mobile-first design"
+    ]
+  },
+  {
+    "name": "ReSell Hub",
+    "tagline": "Tech Marketplace Platform",
+    "image": "🛒",
+    "description": "A modern, secure marketplace platform for buying and selling tech products, featuring role-based authentication, integrated payments via Stripe, and a responsive dashboard.",
+    "tech": ["Next.js 15", "React 19", "Tailwind CSS 4", "HeroUI", "Framer Motion", "Recharts", "Stripe", "Better Auth", "Node.js", "Express.js", "MongoDB"],
+    "live": "https://reshell-client.vercel.app",
+    "github": "https://github.com/Nazmul-vs-code/assignment-10-client",
+    "challenges": "Integrating Stripe payments securely, building 3 separate role-based dashboards, and implementing the product approval system.",
+    "improvements": "Add product recommendations, seller verification badges, bulk upload for sellers, and advanced search with filters.",
+    "features": [
+      "3 role-based dashboards: Admin, Seller, Buyer",
+      "Stripe payment integration for secure transactions",
+      "Product approval system by admin",
+      "Wishlist with toggle functionality",
+      "Subscription plans via Stripe Pro",
+      "Data visualization with Recharts"
+    ]
+  }
+]

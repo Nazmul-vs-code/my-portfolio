@@ -1,0 +1,16 @@
+[
+  {
+    "role": "Frontend Developer Intern",
+    "company": "Tech Solutions Ltd.",
+    "period": "Jun 2024 - Dec 2024",
+    "description": "Developed responsive web applications using React and Next.js. Collaborated with the design team to implement pixel-perfect UI components.",
+    "technologies": ["React", "Next.js", "TypeScript", "Tailwind CSS"]
+  },
+  {
+    "role": "Freelance Web Developer",
+    "company": "Self-Employed",
+    "period": "2023 - Present",
+    "description": "Building custom websites and web applications for clients. Handling full project lifecycle from design to deployment.",
+    "technologies": ["MERN Stack", "Next.js", "Firebase", "Vercel"]
+  }
+]

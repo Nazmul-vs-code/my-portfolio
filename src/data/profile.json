@@ -1,0 +1,13 @@
+{
+  "name": "Nazmul Huda",
+  "greeting": "Hello World!",
+  "designation": "Full Stack Developer",
+  "tagline": "I craft beautiful, performant web experiences with modern technologies. Passionate about clean code, intuitive design, and continuous learning.",
+  "profileImage": "https://i.ibb.co.com/SDKqMg02/Gemini-Generated-Image-wskhfowskhfowskh.png",
+  "resumeUrl": "#",
+  "socials": [
+    { "platform": "GitHub", "url": "https://github.com/Nazmul-vs-code" },
+    { "platform": "LinkedIn", "url": "https://www.linkedin.com/in/nazmul-huda-89b58b203/" },
+    { "platform": "Facebook", "url": "https://www.facebook.com/profile.php?id=61566939297133" }
+  ]
+}
