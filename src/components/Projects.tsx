@@ -234,7 +234,7 @@ export default function Projects() {
             My Work
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold mt-3 mb-4 text-base-content">
-            Featured <span className="gradient-text">Projects</span>
+            Featured Projects
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
           <p className="text-sm text-base-content/50 mt-4 max-w-md mx-auto">
