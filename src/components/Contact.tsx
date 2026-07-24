@@ -4,16 +4,17 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import {
   FiMail,
-  FiPhone,
   FiMessageCircle,
   FiSend,
   FiMapPin,
+  FiCheck,
+  FiLoader,
 } from "react-icons/fi";
 import contactData from "@/data/contact.json";
+import toast from "react-hot-toast";
 
 const iconMap: Record<string, React.ComponentType<{ size?: number }>> = {
   FiMail,
-  FiPhone,
   FiMessageCircle,
   FiMapPin,
 };
@@ -21,15 +22,38 @@ const iconMap: Record<string, React.ComponentType<{ size?: number }>> = {
 export default function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formState);
+    setSending(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formsubmit.co/nazmulfatin08@gmail.com", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setSent(true);
+        toast.success("Message sent successfully! I'll get back to you soon.");
+        form.reset();
+        setTimeout(() => setSent(false), 3000);
+      } else {
+        toast.error("Something went wrong. Please try again or email me directly.");
+      }
+    } catch {
+      toast.error("Network error. Please check your connection and try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -70,7 +94,7 @@ export default function Contact() {
                   const Icon = iconMap[info.icon] || FiMail;
                   return (
                     <motion.a
-                      key={info.label}
+                      key={`${info.label}-${i}`}
                       href={info.href}
                       target={info.href.startsWith("http") ? "_blank" : undefined}
                       rel={
@@ -112,18 +136,22 @@ export default function Contact() {
               onSubmit={handleSubmit}
               className="glass-card rounded-2xl p-8 space-y-6"
             >
+              {/* Hidden fields for FormSubmit */}
+              <input type="hidden" name="_subject" value="New message from Portfolio" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_next" value="https://nazmul-huda-portfolio.vercel.app/#contact" />
+
               <div>
                 <label className="block text-sm font-medium mb-2">
                   Your Name
                 </label>
                 <input
                   type="text"
+                  name="name"
                   placeholder="John Doe"
+                  required
                   className="input input-bordered w-full bg-base-300/30 border-base-300/50 focus:border-primary focus:outline-none transition-colors"
-                  value={formState.name}
-                  onChange={(e) =>
-                    setFormState({ ...formState, name: e.target.value })
-                  }
                 />
               </div>
 
@@ -133,12 +161,10 @@ export default function Contact() {
                 </label>
                 <input
                   type="email"
+                  name="email"
                   placeholder="john@example.com"
+                  required
                   className="input input-bordered w-full bg-base-300/30 border-base-300/50 focus:border-primary focus:outline-none transition-colors"
-                  value={formState.email}
-                  onChange={(e) =>
-                    setFormState({ ...formState, email: e.target.value })
-                  }
                 />
               </div>
 
@@ -147,24 +173,41 @@ export default function Contact() {
                   Message
                 </label>
                 <textarea
+                  name="message"
                   placeholder="Tell me about your project..."
                   rows={5}
+                  required
                   className="textarea textarea-bordered w-full bg-base-300/30 border-base-300/50 focus:border-primary focus:outline-none resize-none transition-colors"
-                  value={formState.message}
-                  onChange={(e) =>
-                    setFormState({ ...formState, message: e.target.value })
-                  }
                 />
               </div>
 
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="btn btn-primary w-full rounded-full btn-glow text-base"
+                disabled={sending}
+                whileHover={{ scale: sending ? 1 : 1.02 }}
+                whileTap={{ scale: sending ? 1 : 0.98 }}
+                className={`btn w-full rounded-full text-base ${
+                  sent
+                    ? "btn-success"
+                    : "btn-primary btn-glow"
+                } ${sending ? "loading" : ""}`}
               >
-                <FiSend className="mr-2" />
-                Send Message
+                {sending ? (
+                  <>
+                    <FiLoader className="mr-2 animate-spin" />
+                    Sending...
+                  </>
+                ) : sent ? (
+                  <>
+                    <FiCheck className="mr-2" />
+                    Sent Successfully!
+                  </>
+                ) : (
+                  <>
+                    <FiSend className="mr-2" />
+                    Send Message
+                  </>
+                )}
               </motion.button>
             </form>
           </motion.div>
