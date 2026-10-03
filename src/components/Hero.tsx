@@ -142,45 +142,33 @@ export default function Hero() {
               className="absolute -inset-8 bg-primary/20 blur-3xl rounded-full z-0 group-hover:bg-primary/40 transition-colors duration-500" 
             />
             
-            {/* Camera Frame Corners */}
+            {/* iPhone Camera Focus Brackets `[ ]` over the face */}
             <motion.div
               variants={{
-                rest: { top: 0, left: 0, opacity: 0 },
-                hover: { top: -16, left: -16, opacity: 1, transition: { duration: 0.4, ease: "easeOut" } }
+                rest: { opacity: 0, scale: 1.3 },
+                hover: { 
+                  opacity: [0, 1, 1, 0.5, 1], 
+                  scale: [1.3, 1, 1, 1, 1],
+                  transition: { 
+                    duration: 1.2, 
+                    times: [0, 0.15, 0.5, 0.7, 1], 
+                    ease: "easeOut" 
+                  }
+                }
               }}
-              className="absolute w-8 h-8 border-t-2 border-l-2 border-accent z-20 pointer-events-none"
-            />
-            <motion.div
-              variants={{
-                rest: { top: 0, right: 0, opacity: 0 },
-                hover: { top: -16, right: -16, opacity: 1, transition: { duration: 0.4, ease: "easeOut" } }
-              }}
-              className="absolute w-8 h-8 border-t-2 border-r-2 border-accent z-20 pointer-events-none"
-            />
-            <motion.div
-              variants={{
-                rest: { bottom: 0, left: 0, opacity: 0 },
-                hover: { bottom: -16, left: -16, opacity: 1, transition: { duration: 0.4, ease: "easeOut" } }
-              }}
-              className="absolute w-8 h-8 border-b-2 border-l-2 border-accent z-20 pointer-events-none"
-            />
-            <motion.div
-              variants={{
-                rest: { bottom: 0, right: 0, opacity: 0 },
-                hover: { bottom: -16, right: -16, opacity: 1, transition: { duration: 0.4, ease: "easeOut" } }
-              }}
-              className="absolute w-8 h-8 border-b-2 border-r-2 border-accent z-20 pointer-events-none"
-            />
-
-            {/* Center Focus Reticle (Optional, looks cool for camera) */}
-            <motion.div
-              variants={{
-                rest: { opacity: 0, scale: 1.5 },
-                hover: { opacity: [0, 1, 0], scale: [1.5, 1, 0.8], transition: { duration: 0.8, ease: "easeOut" } }
-              }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 border-[1px] border-accent/50 rounded-sm z-30 pointer-events-none flex items-center justify-center"
+              className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 sm:w-40 sm:h-40 z-30 pointer-events-none flex justify-between"
             >
-              <div className="w-1 h-1 bg-accent/80 rounded-full" />
+              {/* Left Bracket `[` */}
+              <div className="w-6 sm:w-8 h-full border-l-[3px] border-t-[3px] border-b-[3px] border-[#FFCC00] shadow-[0_0_8px_rgba(255,204,0,0.5)]"></div>
+              {/* Right Bracket `]` */}
+              <div className="w-6 sm:w-8 h-full border-r-[3px] border-t-[3px] border-b-[3px] border-[#FFCC00] shadow-[0_0_8px_rgba(255,204,0,0.5)]"></div>
+              
+              {/* Optional iPhone Sun Exposure Icon (Simplified as a little vertical slider line) */}
+              <div className="absolute -right-6 top-1/2 -translate-y-1/2 w-0.5 h-12 bg-[#FFCC00]/70 rounded-full hidden sm:block">
+                <div className="absolute top-1/2 -translate-y-1/2 -left-1.5 w-3.5 h-3.5 rounded-full border-2 border-[#FFCC00] bg-transparent">
+                  <div className="absolute inset-0 m-auto w-1 h-1 bg-[#FFCC00] rounded-full"></div>
+                </div>
+              </div>
             </motion.div>
             
             {/* Minimalist image container */}
@@ -190,15 +178,14 @@ export default function Hero() {
               transition={{ duration: 1.5, ease: "easeOut" }}
               className="absolute inset-0 glass-panel overflow-hidden z-10"
             >
-              {/* Inner wrapper for camera focus blur effect */}
+              {/* Inner wrapper for snappy camera focus blur effect */}
               <motion.div
                 variants={{
-                  rest: { filter: "blur(0px)", scale: 1, rotate: 0 },
+                  rest: { filter: "blur(0px)", scale: 1 },
                   hover: { 
-                    filter: ["blur(0px)", "blur(12px)", "blur(0px)"], 
-                    scale: 1.05,
-                    rotate: 1,
-                    transition: { duration: 0.8, ease: "easeInOut" } 
+                    filter: ["blur(0px)", "blur(8px)", "blur(0px)"], 
+                    scale: 1.03,
+                    transition: { duration: 0.5, ease: "easeOut" } 
                   }
                 }}
                 className="w-full h-full"
