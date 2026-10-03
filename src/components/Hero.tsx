@@ -54,10 +54,15 @@ export default function Hero() {
           className="flex-1 flex flex-col items-start text-left w-full"
         >
           {/* Top Metadata */}
-          <div className="flex items-center gap-4 mb-8 overflow-hidden font-mono text-sm tracking-widest uppercase text-text-secondary">
+          <div className="flex flex-wrap items-center gap-4 mb-8 overflow-hidden font-mono text-sm tracking-widest uppercase text-text-secondary">
             <motion.div variants={textReveal} className="flex items-center gap-2">
               <span className="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
               Available for work
+            </motion.div>
+            <motion.div variants={textReveal}>
+              <span className="bg-red-500 text-white px-3 py-1 font-bold tracking-widest rounded shadow-[0_0_15px_rgba(239,68,68,0.5)]">
+                {profile.designation}
+              </span>
             </motion.div>
             <motion.div variants={textReveal} className="hidden sm:block">
               // {new Date().getFullYear()}
@@ -125,19 +130,32 @@ export default function Hero() {
           transition={{ duration: 1.2, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
           className="flex-1 w-full flex justify-center md:justify-end relative"
         >
-          <div className="relative w-64 h-80 sm:w-80 sm:h-[450px] lg:w-[400px] lg:h-[550px]">
+          <div className="relative w-64 h-80 sm:w-80 sm:h-[450px] lg:w-[400px] lg:h-[550px] group">
+            {/* Aura effect on hover & load */}
+            <motion.div 
+              animate={{ opacity: [0.4, 0.8, 0.4], scale: [0.9, 1.1, 0.9] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -inset-8 bg-primary/20 blur-3xl rounded-full z-0 group-hover:bg-primary/40 transition-colors duration-500" 
+            />
+            
             {/* Minimalist image container */}
-            <div className="absolute inset-0 glass-panel overflow-hidden">
+            <motion.div 
+              initial={{ scale: 1.1, rotate: -3, y: 30 }}
+              animate={{ scale: 1, rotate: 0, y: 0 }}
+              transition={{ duration: 1.5, ease: "easeOut" }}
+              whileHover={{ scale: 1.03, rotate: 2, transition: { duration: 0.3 } }}
+              className="absolute inset-0 glass-panel overflow-hidden z-10"
+            >
               <Image
                 src={profile.profileImage}
                 alt={profile.name}
                 width={400}
                 height={550}
-                className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-luminosity"
+                className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-luminosity"
                 unoptimized
                 priority
               />
-            </div>
+            </motion.div>
             {/* Accents */}
             <div className="absolute -bottom-4 -left-4 w-24 h-24 border-b-2 border-l-2 border-accent"></div>
             <div className="absolute -top-4 -right-4 w-12 h-12 bg-accent"></div>

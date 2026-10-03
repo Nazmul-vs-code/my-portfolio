@@ -89,13 +89,16 @@ export default function Navbar() {
                 <motion.a
                   href={link.href}
                   onClick={() => setActive(link.href)}
+                  whileHover="hover"
                   className={`liquid-btn px-5 py-2 text-sm font-medium transition-all duration-300 inline-flex items-center gap-2 ${
                     active === link.href
                       ? "bg-accent/10 border-accent text-accent"
                       : ""
                   }`}
                 >
-                  <link.icon size={16} />
+                  <motion.div variants={{ hover: { rotate: [0, -15, 15, -15, 15, 0], scale: 1.1, transition: { duration: 0.4 } } }}>
+                    <link.icon size={16} />
+                  </motion.div>
                   {link.label}
                 </motion.a>
               </LiquidClick>
@@ -134,8 +137,11 @@ export default function Navbar() {
                     rel="noopener noreferrer"
                     className="liquid-btn p-3"
                     title={social.platform}
+                    whileHover="hover"
                   >
-                    <Icon size={18} />
+                    <motion.div variants={{ hover: { rotate: [0, -20, 20, -20, 20, 0], scale: 1.2, transition: { duration: 0.4 } } }}>
+                      <Icon size={18} />
+                    </motion.div>
                   </motion.a>
                 </LiquidClick>
               );
@@ -194,13 +200,16 @@ export default function Navbar() {
                     setActive(link.href);
                     setIsOpen(false);
                   }}
+                  whileHover="hover"
                   className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all flex items-center gap-3 ${
                     active === link.href
                       ? "bg-primary text-primary-content"
                       : "text-base-content/70 hover:bg-base-300/50"
                   }`}
                 >
-                  <link.icon size={18} />
+                  <motion.div variants={{ hover: { rotate: [0, -15, 15, -15, 15, 0], scale: 1.1, transition: { duration: 0.4 } } }}>
+                    <link.icon size={18} />
+                  </motion.div>
                   {link.label}
                 </motion.a>
               ))}
@@ -208,16 +217,19 @@ export default function Navbar() {
                 {profile.socials.map((social) => {
                   const Icon = socialIcons[social.platform] || FiGithub;
                   return (
-                    <a
+                    <motion.a
                       key={social.platform}
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-full text-base-content/60 hover:text-primary transition-colors"
+                      className="p-2 rounded-full text-base-content/60 hover:text-primary transition-colors inline-block"
                       title={social.platform}
+                      whileHover="hover"
                     >
-                      <Icon size={20} />
-                    </a>
+                      <motion.div variants={{ hover: { rotate: [0, -20, 20, -20, 20, 0], scale: 1.2, transition: { duration: 0.4 } } }}>
+                        <Icon size={20} />
+                      </motion.div>
+                    </motion.a>
                   );
                 })}
               </div>
