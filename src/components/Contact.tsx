@@ -9,6 +9,7 @@ import {
   FiSend,
 } from "react-icons/fi";
 import contactData from "@/data/contact.json";
+import LiquidClick from "@/components/LiquidClick";
 
 const iconMap: Record<string, React.ComponentType<{ size?: number }>> = {
   FiMail,
@@ -74,32 +75,33 @@ export default function Contact() {
               {contactData.info.map((info, i) => {
                 const Icon = iconMap[info.icon] || FiMail;
                 return (
-                  <motion.a
-                    key={`${info.label}-${i}`}
-                    href={info.href}
-                    target={info.href.startsWith("http") ? "_blank" : undefined}
-                    rel={
-                      info.href.startsWith("http")
-                        ? "noopener noreferrer"
-                        : undefined
-                    }
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
-                    className="flex items-center gap-6 group"
-                  >
-                    <div className="w-14 h-14 rounded-full border border-border-color flex items-center justify-center text-text-primary group-hover:border-accent group-hover:text-accent group-hover:bg-accent/5 transition-colors duration-500">
-                      <Icon size={24} />
-                    </div>
-                    <div>
-                      <p className="font-mono text-xs tracking-widest uppercase text-text-secondary mb-1">
-                        {info.label}
-                      </p>
-                      <p className="font-sans text-lg font-medium text-text-primary group-hover:text-accent transition-colors">
-                        {info.value}
-                      </p>
-                    </div>
-                  </motion.a>
+                  <LiquidClick key={`${info.label}-${i}`} className="w-full text-left rounded-xl">
+                    <motion.a
+                      href={info.href}
+                      target={info.href.startsWith("http") ? "_blank" : undefined}
+                      rel={
+                        info.href.startsWith("http")
+                          ? "noopener noreferrer"
+                          : undefined
+                      }
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={isInView ? { opacity: 1, y: 0 } : {}}
+                      transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
+                      className="flex items-center gap-6 group w-full p-2"
+                    >
+                      <div className="w-14 h-14 rounded-full border border-border-color flex items-center justify-center text-text-primary group-hover:border-accent group-hover:text-accent group-hover:bg-accent/5 transition-colors duration-500">
+                        <Icon size={24} />
+                      </div>
+                      <div>
+                        <p className="font-mono text-xs tracking-widest uppercase text-text-secondary mb-1">
+                          {info.label}
+                        </p>
+                        <p className="font-sans text-lg font-medium text-text-primary group-hover:text-accent transition-colors">
+                          {info.value}
+                        </p>
+                      </div>
+                    </motion.a>
+                  </LiquidClick>
                 );
               })}
             </div>
@@ -157,13 +159,15 @@ export default function Contact() {
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  className="glass-btn w-full py-4 uppercase tracking-widest text-sm"
-                >
-                  <FiSend className="mr-2" />
-                  Send via WhatsApp
-                </button>
+                <LiquidClick className="w-full rounded-full">
+                  <button
+                    type="submit"
+                    className="glass-btn w-full py-4 uppercase tracking-widest text-sm"
+                  >
+                    <FiSend className="mr-2" />
+                    Send via WhatsApp
+                  </button>
+                </LiquidClick>
               </div>
             </form>
           </motion.div>

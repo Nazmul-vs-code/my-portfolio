@@ -11,6 +11,7 @@ import {
 import profile from "@/data/profile.json";
 import Image from "next/image";
 import toast from "react-hot-toast";
+import LiquidClick from "@/components/LiquidClick";
 
 const socialIcons: Record<string, React.ComponentType<{ size?: number }>> = {
   GitHub: FiGithub,
@@ -96,19 +97,23 @@ export default function Hero() {
           {/* Action Buttons */}
           <div className="overflow-hidden">
             <motion.div variants={textReveal} className="flex flex-wrap items-center gap-6 mt-4">
-              <a href="#projects" className="glass-btn">
-                <span className="font-mono uppercase text-sm font-semibold tracking-widest mr-2">Selected Works</span>
-                <FiArrowDownRight className="group-hover:translate-x-1 group-hover:translate-y-1 transition-transform" />
-              </a>
-              <a
-                href="https://drive.google.com/file/d/1CbaikTN6Tce9937U63ypT0Qs4qaUJPQa/view?usp=drive_link"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-btn"
-              >
-                <FiDownload className="mr-2" />
-                <span className="font-mono uppercase text-sm font-semibold tracking-widest">Show CV</span>
-              </a>
+              <LiquidClick className="rounded-full">
+                <a href="#projects" className="glass-btn">
+                  <span className="font-mono uppercase text-sm font-semibold tracking-widest mr-2">Selected Works</span>
+                  <FiArrowDownRight className="group-hover:translate-x-1 group-hover:translate-y-1 transition-transform" />
+                </a>
+              </LiquidClick>
+              <LiquidClick className="rounded-full">
+                <a
+                  href="https://drive.google.com/file/d/1CbaikTN6Tce9937U63ypT0Qs4qaUJPQa/view?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="glass-btn"
+                >
+                  <FiDownload className="mr-2" />
+                  <span className="font-mono uppercase text-sm font-semibold tracking-widest">Show CV</span>
+                </a>
+              </LiquidClick>
             </motion.div>
           </div>
         </motion.div>
@@ -142,16 +147,17 @@ export default function Hero() {
               {profile.socials.map((social) => {
                 const Icon = socialIcons[social.platform] || FiGithub;
                 return (
-                  <a
-                    key={social.platform}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-text-secondary hover:text-accent transition-colors"
-                    title={social.platform}
-                  >
-                    <Icon size={20} />
-                  </a>
+                  <LiquidClick key={social.platform} className="rounded-full">
+                    <a
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-text-secondary hover:text-accent transition-colors p-2"
+                      title={social.platform}
+                    >
+                      <Icon size={20} />
+                    </a>
+                  </LiquidClick>
                 );
               })}
             </div>

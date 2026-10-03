@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { FiExternalLink, FiGithub, FiArrowUpRight, FiPlus } from "react-icons/fi";
 import projectsData from "@/data/projects.json";
+import LiquidClick from "@/components/LiquidClick";
 
 function ProjectCard({
   project,
@@ -70,12 +71,16 @@ function ProjectCard({
         </div>
 
         <div className="mt-auto flex items-center gap-3 pt-6 border-t border-border-color flex-wrap">
-          <a href={project.live} target="_blank" rel="noopener noreferrer" className="glass-btn font-mono text-xs tracking-widest uppercase flex-1 whitespace-nowrap">
-            Live <FiArrowUpRight className="ml-1" />
-          </a>
-          <a href={project.github} target="_blank" rel="noopener noreferrer" className="glass-btn font-mono text-xs tracking-widest uppercase flex-1 whitespace-nowrap">
-            Code <FiGithub className="ml-1" />
-          </a>
+          <LiquidClick className="flex-1 rounded-full">
+            <a href={project.live} target="_blank" rel="noopener noreferrer" className="glass-btn font-mono text-xs tracking-widest uppercase w-full whitespace-nowrap">
+              Live <FiArrowUpRight className="ml-1" />
+            </a>
+          </LiquidClick>
+          <LiquidClick className="flex-1 rounded-full">
+            <a href={project.github} target="_blank" rel="noopener noreferrer" className="glass-btn font-mono text-xs tracking-widest uppercase w-full whitespace-nowrap">
+              Code <FiGithub className="ml-1" />
+            </a>
+          </LiquidClick>
         </div>
       </div>
     </motion.div>

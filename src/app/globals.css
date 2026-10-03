@@ -190,38 +190,13 @@ h1, h2, h3, h4, h5, h6, .font-display {
   border-radius: 9999px;
   background: transparent;
   color: var(--text-primary);
-  transition: color 0.4s ease;
+  transition: color 0.4s ease, border-color 0.4s ease, background 0.4s ease;
   z-index: 1;
   border: 1px solid color-mix(in srgb, var(--text-primary) 20%, transparent);
 }
 
-.liquid-btn::before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: var(--accent-red);
-  border-radius: 40%;
-  z-index: -1;
-  transition: top 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  animation: liquid-wave 4s linear infinite;
-  opacity: 0.8;
-}
-
 .liquid-btn:hover {
-  color: #fff;
-  border-color: transparent;
-}
-
-.liquid-btn:hover::before {
-  top: -20%;
-}
-
-@keyframes liquid-wave {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  background: color-mix(in srgb, var(--text-primary) 10%, transparent);
 }
 
 /* Cinematic Grain/Noise Overlay */
