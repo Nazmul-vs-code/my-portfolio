@@ -130,7 +130,11 @@ export default function Hero() {
           transition={{ duration: 1.2, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
           className="flex-1 w-full flex justify-center md:justify-end relative"
         >
-          <div className="relative w-64 h-80 sm:w-80 sm:h-[450px] lg:w-[400px] lg:h-[550px] group">
+          <motion.div 
+            initial="rest"
+            whileHover="hover"
+            className="relative w-64 h-80 sm:w-80 sm:h-[450px] lg:w-[400px] lg:h-[550px] group cursor-crosshair"
+          >
             {/* Aura effect on hover & load */}
             <motion.div 
               animate={{ opacity: [0.4, 0.8, 0.4], scale: [0.9, 1.1, 0.9] }}
@@ -138,30 +142,81 @@ export default function Hero() {
               className="absolute -inset-8 bg-primary/20 blur-3xl rounded-full z-0 group-hover:bg-primary/40 transition-colors duration-500" 
             />
             
+            {/* Camera Frame Corners */}
+            <motion.div
+              variants={{
+                rest: { top: 0, left: 0, opacity: 0 },
+                hover: { top: -16, left: -16, opacity: 1, transition: { duration: 0.4, ease: "easeOut" } }
+              }}
+              className="absolute w-8 h-8 border-t-2 border-l-2 border-accent z-20 pointer-events-none"
+            />
+            <motion.div
+              variants={{
+                rest: { top: 0, right: 0, opacity: 0 },
+                hover: { top: -16, right: -16, opacity: 1, transition: { duration: 0.4, ease: "easeOut" } }
+              }}
+              className="absolute w-8 h-8 border-t-2 border-r-2 border-accent z-20 pointer-events-none"
+            />
+            <motion.div
+              variants={{
+                rest: { bottom: 0, left: 0, opacity: 0 },
+                hover: { bottom: -16, left: -16, opacity: 1, transition: { duration: 0.4, ease: "easeOut" } }
+              }}
+              className="absolute w-8 h-8 border-b-2 border-l-2 border-accent z-20 pointer-events-none"
+            />
+            <motion.div
+              variants={{
+                rest: { bottom: 0, right: 0, opacity: 0 },
+                hover: { bottom: -16, right: -16, opacity: 1, transition: { duration: 0.4, ease: "easeOut" } }
+              }}
+              className="absolute w-8 h-8 border-b-2 border-r-2 border-accent z-20 pointer-events-none"
+            />
+
+            {/* Center Focus Reticle (Optional, looks cool for camera) */}
+            <motion.div
+              variants={{
+                rest: { opacity: 0, scale: 1.5 },
+                hover: { opacity: [0, 1, 0], scale: [1.5, 1, 0.8], transition: { duration: 0.8, ease: "easeOut" } }
+              }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 border-[1px] border-accent/50 rounded-sm z-30 pointer-events-none flex items-center justify-center"
+            >
+              <div className="w-1 h-1 bg-accent/80 rounded-full" />
+            </motion.div>
+            
             {/* Minimalist image container */}
             <motion.div 
               initial={{ scale: 1.1, rotate: -3, y: 30 }}
               animate={{ scale: 1, rotate: 0, y: 0 }}
               transition={{ duration: 1.5, ease: "easeOut" }}
-              whileHover={{ scale: 1.03, rotate: 2, transition: { duration: 0.3 } }}
               className="absolute inset-0 glass-panel overflow-hidden z-10"
             >
-              <Image
-                src={profile.profileImage}
-                alt={profile.name}
-                width={400}
-                height={550}
-                className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-luminosity"
-                unoptimized
-                priority
-              />
+              {/* Inner wrapper for camera focus blur effect */}
+              <motion.div
+                variants={{
+                  rest: { filter: "blur(0px)", scale: 1, rotate: 0 },
+                  hover: { 
+                    filter: ["blur(0px)", "blur(12px)", "blur(0px)"], 
+                    scale: 1.05,
+                    rotate: 1,
+                    transition: { duration: 0.8, ease: "easeInOut" } 
+                  }
+                }}
+                className="w-full h-full"
+              >
+                <Image
+                  src={profile.profileImage}
+                  alt={profile.name}
+                  width={400}
+                  height={550}
+                  className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out mix-blend-luminosity group-hover:mix-blend-normal"
+                  unoptimized
+                  priority
+                />
+              </motion.div>
             </motion.div>
-            {/* Accents */}
-            <div className="absolute -bottom-4 -left-4 w-24 h-24 border-b-2 border-l-2 border-accent"></div>
-            <div className="absolute -top-4 -right-4 w-12 h-12 bg-accent"></div>
             
             {/* Social Links Vertical */}
-            <div className="absolute top-1/2 -right-16 -translate-y-1/2 flex flex-col gap-6 hidden xl:flex">
+            <div className="absolute top-1/2 -right-16 -translate-y-1/2 flex flex-col gap-6 hidden xl:flex z-30">
               {profile.socials.map((social) => {
                 const Icon = socialIcons[social.platform] || FiGithub;
                 return (
@@ -170,7 +225,7 @@ export default function Hero() {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-text-secondary hover:text-accent transition-colors p-2"
+                      className="text-text-secondary hover:text-accent transition-colors p-2 flex items-center justify-center"
                       title={social.platform}
                     >
                       <Icon size={20} />
@@ -179,7 +234,7 @@ export default function Hero() {
                 );
               })}
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
       
