@@ -11,13 +11,13 @@
 </p>
 
 <p align="center">
-  <a href="https://nazmul-huda-portfolio.vercel.app" target="_blank">
-    <img src="https://img.shields.io/badge/🌐_Live_Site-nazmul--huda--portfolio.vercel.app-06b6d4?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Site" />
+  <a href="https://my-portfolio-eta-six-34.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/🌐_Live_Site-my--portfolio--eta--six--34.vercel.app-06b6d4?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Site" />
   </a>
   <a href="https://www.linkedin.com/in/nazmul-huda-89b58b203/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-Nazmul_Huda-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
-  <a href="https://github.com/Nazmul-vs-code" target="_blank">
+  <a href="https://github.com/Nazmul-vs-code/my-portfolio" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-Nazmul--vs--code-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
 </p>
