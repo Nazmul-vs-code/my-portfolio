@@ -12,6 +12,7 @@ import {
   FiMapPin,
 } from "react-icons/fi";
 import { HiArrowUp, HiCode } from "react-icons/hi";
+import { SiCodeforces } from "react-icons/si";
 import profile from "@/data/profile.json";
 import contactData from "@/data/contact.json";
 import Image from "next/image";
@@ -19,6 +20,7 @@ import Image from "next/image";
 const socialIcons: Record<string, React.ComponentType<{ size?: number }>> = {
   GitHub: FiGithub,
   LinkedIn: FiLinkedin,
+  Codeforces: SiCodeforces,
   Twitter: FiTwitter,
   Facebook: FiFacebook,
 };

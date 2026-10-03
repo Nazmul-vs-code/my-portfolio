@@ -3,22 +3,24 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
-import { FiGithub, FiLinkedin, FiFacebook } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiFacebook, FiHome, FiUser, FiCode, FiBriefcase, FiMail } from "react-icons/fi";
+import { SiCodeforces } from "react-icons/si";
 import profile from "@/data/profile.json";
 import LiquidClick from "@/components/LiquidClick";
 
 const socialIcons: Record<string, React.ComponentType<{ size?: number }>> = {
   GitHub: FiGithub,
   LinkedIn: FiLinkedin,
+  Codeforces: SiCodeforces,
   Facebook: FiFacebook,
 };
 
 const navLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Projects" },
-  { href: "#contact", label: "Contact" },
+  { href: "#home", label: "Home", icon: FiHome },
+  { href: "#about", label: "About", icon: FiUser },
+  { href: "#skills", label: "Skills", icon: FiCode },
+  { href: "#projects", label: "Projects", icon: FiBriefcase },
+  { href: "#contact", label: "Contact", icon: FiMail },
 ];
 
 export default function Navbar() {
@@ -87,12 +89,13 @@ export default function Navbar() {
                 <motion.a
                   href={link.href}
                   onClick={() => setActive(link.href)}
-                  className={`liquid-btn px-5 py-2 text-sm font-medium transition-all duration-300 ${
+                  className={`liquid-btn px-5 py-2 text-sm font-medium transition-all duration-300 inline-flex items-center gap-2 ${
                     active === link.href
                       ? "bg-accent/10 border-accent text-accent"
                       : ""
                   }`}
                 >
+                  <link.icon size={16} />
                   {link.label}
                 </motion.a>
               </LiquidClick>
@@ -191,12 +194,13 @@ export default function Navbar() {
                     setActive(link.href);
                     setIsOpen(false);
                   }}
-                  className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all ${
+                  className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all flex items-center gap-3 ${
                     active === link.href
                       ? "bg-primary text-primary-content"
                       : "text-base-content/70 hover:bg-base-300/50"
                   }`}
                 >
+                  <link.icon size={18} />
                   {link.label}
                 </motion.a>
               ))}
