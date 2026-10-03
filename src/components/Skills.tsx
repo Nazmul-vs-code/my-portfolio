@@ -25,32 +25,21 @@ function SkillCard({
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.05 }}
-      className="glass-card rounded-2xl p-6 cursor-default"
+      className="glass-card rounded-2xl p-6 cursor-default flex flex-col items-center justify-center text-center group hover:border-accent/50 transition-colors"
     >
-      <div className="flex items-center gap-4 mb-4">
-        <div className="w-12 h-12 flex items-center justify-center">
-          <Image
-            src={iconUrl}
-            alt={name}
-            width={48}
-            height={48}
-            className="w-12 h-12"
-            unoptimized
-          />
-        </div>
-        <div className="flex-1">
-          <h4 className="font-semibold text-base-content">{name}</h4>
-          <span className="text-xs text-base-content/50">{level}%</span>
-        </div>
-      </div>
-      <div className="w-full h-2 bg-base-300 rounded-full overflow-hidden">
-        <motion.div
-          initial={{ width: 0 }}
-          animate={isInView ? { width: `${level}%` } : {}}
-          transition={{ duration: 1, delay: 0.3 + index * 0.05, ease: "easeOut" }}
-          className="h-full skill-bar rounded-full"
+      <div className="w-14 h-14 mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+        <Image
+          src={iconUrl}
+          alt={name}
+          width={56}
+          height={56}
+          className="w-14 h-14 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500"
+          unoptimized
         />
       </div>
+      <h4 className="font-mono text-sm tracking-wider uppercase text-text-primary group-hover:text-accent transition-colors">
+        {name}
+      </h4>
     </motion.div>
   );
 }
@@ -75,36 +64,21 @@ function LanguageCard({
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.4, delay: index * 0.05 }}
-      className="glass-card rounded-xl p-4 cursor-default"
+      className="glass-card rounded-xl p-4 cursor-default flex items-center justify-center gap-3 group hover:border-accent/50 transition-colors"
     >
-      <div className="flex items-center gap-3">
-        <div className="w-10 h-10 flex items-center justify-center">
-          <Image
-            src={iconUrl}
-            alt={name}
-            width={40}
-            height={40}
-            className="w-10 h-10"
-            unoptimized
-          />
-        </div>
-        <div className="flex-1">
-          <h4 className="font-semibold text-sm text-base-content">{name}</h4>
-          {level !== undefined && (
-            <span className="text-xs text-base-content/50">{level}%</span>
-          )}
-        </div>
+      <div className="w-8 h-8 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+        <Image
+          src={iconUrl}
+          alt={name}
+          width={32}
+          height={32}
+          className="w-8 h-8 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500"
+          unoptimized
+        />
       </div>
-      {level !== undefined && (
-        <div className="w-full h-1.5 bg-base-300 rounded-full overflow-hidden mt-3">
-          <motion.div
-            initial={{ width: 0 }}
-            animate={isInView ? { width: `${level}%` } : {}}
-            transition={{ duration: 1, delay: 0.3 + index * 0.05, ease: "easeOut" }}
-            className="h-full skill-bar rounded-full"
-          />
-        </div>
-      )}
+      <h4 className="font-mono text-xs tracking-wider uppercase text-text-primary group-hover:text-accent transition-colors">
+        {name}
+      </h4>
     </motion.div>
   );
 }

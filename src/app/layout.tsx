@@ -1,15 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Syncopate } from "next/font/google";
 import { Toaster } from "react-hot-toast";
+import CustomCursor from "@/components/CustomCursor";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetBrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+});
+
+const syncopate = Syncopate({
+  weight: ["400", "700"],
+  variable: "--font-syncopate",
   subsets: ["latin"],
 });
 
@@ -28,9 +35,10 @@ export default function RootLayout({
     <html
       lang="en"
       data-theme="dark"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${jetBrainsMono.variable} ${syncopate.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <CustomCursor />
         {children}
         <Toaster
           position="top-center"

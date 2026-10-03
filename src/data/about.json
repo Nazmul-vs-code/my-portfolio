@@ -12,7 +12,7 @@
   "quote": "Learning never stops. Every project is another opportunity to grow.",
   "stats": [
     { "num": "10+", "label": "Projects" },
-    { "num": "8+", "label": "Month Exp" },
-    { "num": "50+", "label": "Commits" }
+    { "num": "50+", "label": "Commits" },
+    { "num": "150+", "label": "Codeforces Solved" }
   ]
 }
