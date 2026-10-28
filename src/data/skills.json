@@ -50,7 +50,7 @@
         { "name": "Node.js", "level": 80, "icon": "https://skillicons.dev/icons?i=nodejs" },
         { "name": "Express.js", "level": 78, "icon": "https://skillicons.dev/icons?i=express" },
         { "name": "MongoDB", "level": 76, "icon": "https://skillicons.dev/icons?i=mongodb" },
-        { "name": "Mongoose", "level": 76, "icon": "https://skillicons.dev/icons?i=mongoose" },
+        { "name": "Mongoose", "level": 76, "icon": "/mongoose.jpg" },
         { "name": "PostgreSQL", "level": 70, "icon": "https://skillicons.dev/icons?i=postgres" },
         { "name": "Sequelize", "level": 70, "icon": "https://skillicons.dev/icons?i=sequelize" }
       ]
