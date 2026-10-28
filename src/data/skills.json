@@ -20,6 +20,11 @@
       "name": "JavaScript",
       "level": 88,
       "icon": "https://skillicons.dev/icons?i=js"
+    },
+    {
+      "name": "TypeScript",
+      "level": 80,
+      "icon": "https://skillicons.dev/icons?i=typescript"
     }
   ],
   "previouslyPracticed": [
@@ -43,7 +48,9 @@
       "skills": [
         { "name": "Node.js", "level": 80, "icon": "https://skillicons.dev/icons?i=nodejs" },
         { "name": "Express.js", "level": 78, "icon": "https://skillicons.dev/icons?i=express" },
-        { "name": "MongoDB", "level": 76, "icon": "https://skillicons.dev/icons?i=mongodb" }
+        { "name": "MongoDB", "level": 76, "icon": "https://skillicons.dev/icons?i=mongodb" },
+        { "name": "PostgreSQL", "level": 70, "icon": "https://skillicons.dev/icons?i=postgres" },
+        { "name": "Sequelize", "level": 70, "icon": "https://skillicons.dev/icons?i=sequelize" }
       ]
     },
     {
