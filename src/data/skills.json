@@ -9,6 +9,7 @@
         { "name": "HTML5", "level": 95, "icon": "https://skillicons.dev/icons?i=html" },
         { "name": "CSS3", "level": 90, "icon": "https://skillicons.dev/icons?i=css" },
         { "name": "JavaScript", "level": 88, "icon": "https://skillicons.dev/icons?i=js" },
+        { "name": "TypeScript", "level": 80, "icon": "https://skillicons.dev/icons?i=typescript" },
         { "name": "Tailwind CSS", "level": 88, "icon": "https://skillicons.dev/icons?i=tailwind" }
       ]
     },
@@ -69,11 +70,15 @@
       "title": "Security",
       "emoji": "🔐",
       "skills": [
-        { "name": "Linux", "level": 75, "icon": "https://skillicons.dev/icons?i=linux" },
+        { "name": "Burp Suite", "level": 70, "icon": "https://cdn.simpleicons.org/burpsuite" },
+        { "name": "Caido", "level": 70, "icon": "https://cdn.simpleicons.org/caido" },
+        { "name": "Ubuntu Linux", "level": 75, "icon": "https://cdn.simpleicons.org/ubuntu" },
+        { "name": "Kali Linux", "level": 75, "icon": "https://cdn.simpleicons.org/kalilinux" },
         { "name": "Bash", "level": 70, "icon": "https://skillicons.dev/icons?i=bash" }
       ],
       "extras": [
         "Bug Bounty",
+        "OWASP Top 10",
         "XSS",
         "IDOR",
         "Broken Access Control",
