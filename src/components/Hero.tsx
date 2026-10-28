@@ -191,7 +191,7 @@ export default function Hero() {
                 className="w-full h-full"
               >
                 <Image
-                  src={profile.profileImage}
+                  src={`https://i.pinimg.com/736x/96/a8/90/96a89097cea90bf40784d049ec70af5a.jpg`}
                   alt={profile.name}
                   width={400}
                   height={550}
